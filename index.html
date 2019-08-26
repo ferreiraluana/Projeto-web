@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="free market">
+    <title>Empresa Web</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel='shortcut icon' href="icone-empresa.png" type='image/png' />
+    <script src="scripts/script.js"></script>
+    
+    </head>
+    
+    <body>
+                    <nav>
+                        <ul>
+                            <img src="icone.png">
+                            <li><input type="button" value="Adicionar Funcionário" id="ADICIONAR" onClick="panel_display(this.id)"></li>
+                            <li><input type="button" value="Remover Funcionário" id="REMOVER" onClick="panel_display(this.id)"></li>
+                            <li><input type="button" value="Lista de Funcionários" id="LISTA" onClick="panel_display(this.id),viewFuncionarios()"></li>
+                            <li><input type="button" value="Editar Dados" id="EDITAR_ID" onClick=panel_display(this.id)></li>
+                        </ul>
+                    </nav>
+        
+        
+         <form action="javascript:void(0)" id="form_adicionar" class="hidden" >
+                <div>
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="NOME_ADICIONAR" />
+                </div>
+                
+                <div>
+                    <label for="address">Endereço: </label>
+                    <input type="text" id="ADDRESS_ADICIONAR" />
+                </div>
+                
+                <div>
+                    <label for="salario">Salário: </label>
+                    <input type="number" id="SALARIO_ADICIONAR" />
+                </div>
+                
+                <div>
+                    <label for="type">Tipo do Funcionário: </label>
+                    <select name="Type" id="TIPO_ADICIONAR">
+                        <option value="Horista">Horista</option>
+                        <option value="Salariado">Salariado</option>
+                        <option value="Comissionado">Comissionado</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="type">O funcionário pertence ao sindicato?</label>
+                    <select name="Type" id="SINDICATO_ADICIONAR">
+                        <option value="Não">Não</option>
+                        <option value="Sim">Sim</option>
+                    </select>
+                </div>
+             
+                <div>
+                    <label for="type">Escolha o método de pagamento</label>
+                    <select name="Type" id="PAGAMENTO_ADICIONAR">
+                        <option value="Cheque pelos correios">Cheque pelos correios</option>
+                        <option value="Cheque em mãos">Cheque em mãos</option>
+                        <option value="Depósito bancário">Depósito bancário</option>
+                    </select>
+                </div>
+
+                
+                <div class="button">
+                    <button type="submit" onClick="(saveForm())">Adicionar funcionário</button>
+                </div>
+            
+            </form>
+        
+        <form action="javascript:void(0)" id="form_remover" class="hidden">
+                <div></div>
+                <div>
+                    Digite o ID do funcionário a ser removido:
+                    <label for="ID"></label>
+                    <input type="number" id="ID_REMOVE">
+                </div>
+
+                <div class="button">
+                    <button type="submit" onClick="(remover())">Remover funcionário</button>
+                </div>
+            
+            </form>
+        
+        
+             <form action="javascript:void(0)" id="form_editar_id" class="hidden">
+    
+                <div></div>
+                <div>
+                    <label for="ID">Digite o ID do funcionário: </label>
+                    <input type="number" id="ID_EDITAR">
+                </div>
+
+                <div class="button">
+                    <button type="submit" onClick="(editar_id())">Ir</button>
+                </div>
+            </form> 
+            
+             <div class="hidden" id="divView">
+                 
+             </div>
+        
+             <form action="javascript:void(0)" id="form_editar" class="hidden" >
+                <div>
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="NOME_EDITAR" />
+                </div>
+                
+                <div>
+                    <label for="address">Endereço: </label>
+                    <input type="text" id="ADDRESS_EDITAR" />
+                </div>
+                
+                <div>
+                    <label for="salario">Salário: </label>
+                    <input type="number" id="SALARIO_EDITAR" />
+                </div>
+                
+                <div>
+                    <label for="type">Tipo do Funcionário: </label>
+                    <select name="Type" id="TIPO_EDITAR">
+                        <option value="Nao mudar">Não mudar</option>
+                        <option value="Horista">Horista</option>
+                        <option value="Salariado">Salariado</option>
+                        <option value="Comissionado">Comissionado</option>
+                    </select>
+                </div>
+                 
+                 <div>
+                    <label for="type">O funcionário pertence ao sindicato?</label>
+                    <select name="Type" id="SINDICATO_EDITAR">
+                        <option value="Nao mudar">Não mudar</option>
+                        <option value="Não">Não</option>
+                        <option value="Sim">Sim</option>
+                    </select>
+                </div>
+             
+                <div>
+                    <label for="type">Escolha o método de pagamento</label>
+                    <select name="Type" id="PAGAMENTO_EDITAR">
+                        <option value="Nao mudar">Não mudar</option>
+                        <option value="Cheque pelos correios">Cheque pelos correios</option>
+                        <option value="Cheque em mãos">Cheque em mãos</option>
+                        <option value="Depósito bancário">Depósito bancário</option>
+                    </select>
+                </div>
+                
+                <div class="button">
+                    <button type="submit" onClick="(editar())">Editar funcionário</button>
+                </div>
+            
+            </form>
+            
+    </body>
+</html>
